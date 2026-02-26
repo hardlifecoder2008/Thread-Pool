@@ -7,6 +7,7 @@
 #include <condition_variable>
 #include <functional>
 
+
 class ThreadPool
 {
 public:
@@ -23,7 +24,6 @@ public:
     ~ThreadPool();
 
     template <class F>
-    
     void submit(F &&f);
 
     void shutdown();
@@ -37,3 +37,4 @@ private:
     bool m_stop = false;
     std::vector<std::thread> m_workers_;
 };
+#include "ThreadPool.tpp"
